@@ -4,7 +4,7 @@
 
 访问我们的 [GitHub 仓库](https://github.com/ybooks240/Logseq_extension_pro) 获取源码和更新。
 
-![添加待办界面](metadata/add-todo.png)
+![添加待办界面](metadata/add-todo.j p g)
 
 ## 功能特色
 
@@ -32,7 +32,7 @@
 1. **Logseq 图谱路径**：设置你的 Logseq 图谱本地路径
    - 这就是你的 Logseq 页面存储的地方
    - 示例：`/Users/username/Documents/logseq-notes/`
-   ![配置界面](metadata/config.png)
+   ![配置界面](metadata/config.jpg)
 
 2. **默认页面**：设置添加待办时的默认页面
    - 当没有指定页面时就用这个
@@ -42,7 +42,7 @@
 
 ### 添加待办
 
-![添加待办界面](metadata/add-todo-1.png)
+![添加待办界面](metadata/add-todo-1.jpg)
 
 1. 打开 Raycast 输入 "Add Todo"（就像发微博一样简单）
 2. 填写待办详情：
@@ -56,7 +56,7 @@
 
 ### 搜索和管理待办
 
-![搜索待办界面](metadata/search-todo.png)
+![搜索待办界面](metadata/search-todo.jpg)
 
 1. 打开 Raycast 输入 "Search Todo"
 2. 使用强大的筛选选项：
@@ -69,26 +69,26 @@
 #### 待办管理功能
 
 1. **更改待办状态**
-   ![修改状态](metadata/search-todo-alter-status.png)
+   ![修改状态](metadata/search-todo-alter-status.jpg)
    - 选择一个待办
    - 点击"更改状态"
    - 选择新状态（就像给任务换身衣服）
 
 2. **修改优先级**
-   ![修改优先级](metadata/search-todo-alter-priority.png)
+   ![修改优先级](metadata/search-todo-alter-priority.jpg)
    - 选择一个待办
    - 点击"更改优先级"
    - 选择新的优先级（升职加薪就是这么简单）
 
 3. **删除待办**
-   ![删除待办](metadata/search-todo-to-delete.png)
+   ![删除待办](metadata/search-todo-to-delete.jpg)
    - 选择一个待办
    - 点击"删除"
    - 确认删除（再见了，亲爱的任务）
 
 ### 添加笔记
 
-![添加笔记界面](metadata/add-note.png)
+![添加笔记界面](metadata/add-note.jpg)
 
 1. 打开 Raycast 输入 "Add Note"
 2. 输入笔记内容（想到什么写什么）

@@ -4,7 +4,7 @@ A powerful Raycast extension that enhances your Logseq workflow by providing qui
 
 Visit our [GitHub repository](https://github.com/ybooks240/Logseq_extension_pro) for source code and updates.
 
-![Add Todo Interface](metadata/add-todo.png)
+![Add Todo Interface](metadata/add-todo.jpg)
 
 ## Features
 
@@ -32,7 +32,7 @@ Before using the extension, you need to set up two essential configurations:
 1. **Logseq Graph Path**: Set the local path to your Logseq graph
    - This is where your Logseq pages are stored
    - Example: `/Users/username/Documents/logseq-notes/`
-   ![Configuration](metadata/config.png)
+   ![Configuration](metadata/config.jpg)
 
 2. **Default Page**: Set the default page name for adding Todos
    - This page will be used when no specific page is selected
@@ -42,7 +42,7 @@ Before using the extension, you need to set up two essential configurations:
 
 ### Adding Todos
 
-![Add Todo Interface](metadata/add-todo-1.png)
+![Add Todo Interface](metadata/add-todo-1.jpg)
 
 1. Open Raycast and type "Add Todo"
 2. Fill in the Todo details:
@@ -56,7 +56,7 @@ Before using the extension, you need to set up two essential configurations:
 
 ### Searching and Managing Todos
 
-![Search Todo Interface](metadata/search-todo.png)
+![Search Todo Interface](metadata/search-todo.jpg)
 
 1. Open Raycast and type "Search Todo"
 2. Use the powerful filtering options:
@@ -69,26 +69,26 @@ Before using the extension, you need to set up two essential configurations:
 #### Todo Management Features
 
 1. **Change Todo Status**
-   ![Alter Status](metadata/search-todo-alter-status.png)
+   ![Alter Status](metadata/search-todo-alter-status.jpg)
    - Select a Todo
    - Choose "Change Status"
    - Pick the new status
 
 2. **Modify Priority**
-   ![Alter Priority](metadata/search-todo-alter-priority.png)
+   ![Alter Priority](metadata/search-todo-alter-priority.jpg)
    - Select a Todo
    - Choose "Change Priority"
    - Select the new priority level
 
 3. **Delete Todo**
-   ![Delete Todo](metadata/search-todo-to-delete.png)
+   ![Delete Todo](metadata/search-todo-to-delete.jpg)
    - Select a Todo
    - Choose "Delete"
    - Confirm deletion
 
 ### Adding Notes
 
-![Add Note Interface](metadata/add-note.png)
+![Add Note Interface](metadata/add-note.jpg)
 
 1. Open Raycast and type "Add Note"
 2. Enter your note content

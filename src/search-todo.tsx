@@ -1,4 +1,4 @@
-import { List, ActionPanel, Action, showToast, Toast, getPreferenceValues, Icon, Image } from "@raycast/api";
+import { List, ActionPanel, Action, showToast, Toast, getPreferenceValues, Icon } from "@raycast/api";
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { readdir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
@@ -48,14 +48,19 @@ export default function Command() {
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        const todoMatch = line.match(/^- (TODO|NOW|WAITING|LATER|DOING|DONE|CANCELED) \[#([ABC])\] ([^\n]+?)(?:\s+(?:#[^\s]+\s*)*)?(?:\s+📅\s*[^\n]+)?$/);
+        const todoMatch = line.match(
+          /^- (TODO|NOW|WAITING|LATER|DOING|DONE|CANCELED) \[#([ABC])\] ([^\n]+?)(?:\s+(?:#[^\s]+\s*)*)?(?:\s+📅\s*[^\n]+)?$/,
+        );
         if (todoMatch) {
           const currentContent = todoMatch[3];
           const currentContentWithoutTags = currentContent.replace(/#[^\s]+/g, "").trim();
           const todoContentWithoutPriority = todo.content.replace(/\s*\[#[ABC]\]\s*/g, "").trim();
-          const todoContentWithoutDeadline = todoContentWithoutPriority.replace(/📅.*$/,"").trim();
-          
-          if (currentContentWithoutTags === todoContentWithoutPriority || todoContentWithoutDeadline === currentContentWithoutTags) {
+          const todoContentWithoutDeadline = todoContentWithoutPriority.replace(/📅.*$/, "").trim();
+
+          if (
+            currentContentWithoutTags === todoContentWithoutPriority ||
+            todoContentWithoutDeadline === currentContentWithoutTags
+          ) {
             const tagsMatch = line.match(/ #[^\s\]]+/g) || [];
             const dateMatch = line.match(/📅\s*([^\n]+)/);
             const tags = tagsMatch.length > 0 ? ` ${tagsMatch.join(" ")}` : "";
@@ -68,7 +73,7 @@ export default function Command() {
             await showToast({
               style: Toast.Style.Success,
               title: "Content to be updated",
-              message: `"${updatedLine.trim()}"`
+              message: `"${updatedLine.trim()}"`,
             });
           }
         }
@@ -176,7 +181,7 @@ export default function Command() {
                             ? Icon.Calendar
                             : Icon.Circle,
               text: todo.status,
-              tooltip: todo.status
+              tooltip: todo.status,
             },
 
             {
@@ -206,9 +211,9 @@ export default function Command() {
                 <Action title="Canceled" onAction={() => updateTodo(todo, "CANCELED", todo.priority)} />
               </ActionPanel.Submenu>
               <ActionPanel.Submenu title="Change Priority">
-                <Action title="High Priority (A)" onAction={() => updateTodo(todo, todo.status, "A")} />
-                <Action title="Medium Priority (B)" onAction={() => updateTodo(todo, todo.status, "B")} />
-                <Action title="Low Priority (C)" onAction={() => updateTodo(todo, todo.status, "C")} />
+                <Action title="High - Priority (a)" onAction={() => updateTodo(todo, todo.status, "A")} />
+                <Action title="Medium Priority (b)" onAction={() => updateTodo(todo, todo.status, "B")} />
+                <Action title="Low Priority (c)" onAction={() => updateTodo(todo, todo.status, "C")} />
               </ActionPanel.Submenu>
               <Action
                 title="Delete Todo"
@@ -225,15 +230,23 @@ export default function Command() {
                         skipNext = false;
                         return false;
                       }
-                      const todoMatch = line.match(/^- (TODO|NOW|WAITING|LATER|DOING|DONE|CANCELED) \[#([ABC])\] ([^\n]+?)(?:\s+(?:#[^\s]+\s*)*)?(?:\s+📅\s*[^\n]+)?$/);      
+                      const todoMatch = line.match(
+                        /^- (TODO|NOW|WAITING|LATER|DOING|DONE|CANCELED) \[#([ABC])\] ([^\n]+?)(?:\s+(?:#[^\s]+\s*)*)?(?:\s+📅\s*[^\n]+)?$/,
+                      );
                       if (!todoMatch) return true;
                       const currentContentWithoutTags = todo.content.replace(/#[^\s]+/g, "").trim();
-                      const todoContentWithoutPriority = currentContentWithoutTags.replace(/\s*\[#[ABC]\]\s*/g, "").trim();
-                      const todoContentWithoutDeadline = todoContentWithoutPriority.replace(/📅.*$/,"").trim();
+                      const todoContentWithoutPriority = currentContentWithoutTags
+                        .replace(/\s*\[#[ABC]\]\s*/g, "")
+                        .trim();
+                      const todoContentWithoutDeadline = todoContentWithoutPriority.replace(/📅.*$/, "").trim();
                       const todoContent = todoMatch[3].replace(/#[^\s]+/g, "").trim();
-                      console.log(todoContent,todoContentWithoutDeadline)
+                      console.log(todoContent, todoContentWithoutDeadline);
                       if (todoContent === todoContentWithoutDeadline) {
-                        if (lines[index + 1] && lines[index + 1].trim().startsWith("  DEADLINE:") && lines[index + 1].trim().startsWith("  SCHEDULED:")) {
+                        if (
+                          lines[index + 1] &&
+                          lines[index + 1].trim().startsWith("  DEADLINE:") &&
+                          lines[index + 1].trim().startsWith("  SCHEDULED:")
+                        ) {
                           skipNext = true;
                         }
                         return false;
@@ -244,7 +257,7 @@ export default function Command() {
                     await showToast({
                       style: Toast.Style.Success,
                       title: "Content to be deleted",
-                      message: `"${todo.content}"`
+                      message: `"${todo.content}"`,
                     });
                     await writeFile(filePath, finalContent);
                     await loadTodos();

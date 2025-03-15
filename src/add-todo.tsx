@@ -40,7 +40,7 @@ export default function Command() {
     status: "WAITING",
     priority: "B",
     tags: "",
-    dueDate: ""
+    dueDate: "",
   });
 
   async function handleSubmit(values: FormValues) {
@@ -49,7 +49,7 @@ export default function Command() {
         await showToast({
           style: Toast.Style.Warning,
           title: "Duplicate Content",
-          message: "You just submitted the same content. Are you sure you want to submit it again?"
+          message: "You just submitted the same content. Are you sure you want to submit it again?",
         });
       }
       setLastSubmittedContent(values.content);
@@ -81,12 +81,11 @@ export default function Command() {
         : content.endsWith("\n")
           ? content + "\n" + todoItem
           : content + "\n\n" + todoItem;
-
       await writeFile(pagePath, newContent, "utf-8");
       await showToast({
         style: Toast.Style.Success,
         title: "Success",
-        message: "Todo item added successfully"
+        message: "Todo item added successfully",
       });
     } catch (error) {
       await showToast(Toast.Style.Failure, "Failed to add Todo");
