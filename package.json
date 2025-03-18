@@ -28,6 +28,13 @@
       "title": "Add Note",
       "description": "Quickly add Note to specified pages",
       "mode": "view"
+    },
+    {
+      "name": "search-pages",
+      "title": "Search Pages",
+      "description": "Search and open Logseq pages",
+      "mode": "view",
+      "main": "src/search-pages.tsx"
     }
   ],
   "preferences": [
@@ -38,6 +45,14 @@
       "title": "Logseq Graph Path",
       "description": "Local path to your Logseq graph",
       "placeholder": "/Users/james.liu/Code/raycast/logseq-graph/"
+    },
+    {
+      "name": "dateFormat",
+      "type": "textfield",
+      "required": false,
+      "title": "Date Format",
+      "description": "Format for displaying dates (e.g. 'EEEE, yyyy/MM/dd')",
+      "default": "EEEE, yyyy/MM/dd"
     },
     {
       "name": "defaultPage",
@@ -51,6 +66,7 @@
   "dependencies": {
     "@raycast/api": "^1.93.2",
     "@raycast/utils": "^1.17.0",
+    "date-fns": "^4.1.0",
     "lodash": "^4.17.21",
     "node-fetch": "^3.3.2"
   },

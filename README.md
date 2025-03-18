@@ -1,5 +1,7 @@
 # Logseq Extension Pro
 
+[中文文档](README-zh.md)
+
 A powerful Raycast extension that enhances your Logseq workflow by providing quick access to add and manage Todos and Notes.
 
 Visit our [GitHub repository](https://github.com/ybooks240/Logseq_extension_pro) for source code and updates.
@@ -7,6 +9,11 @@ Visit our [GitHub repository](https://github.com/ybooks240/Logseq_extension_pro)
 ![Add Todo Interface](metadata/add-todo.jpg)
 
 ## Features
+
+### Page Search
+- Quick access to Logseq pages
+- Filter by journal pages (date format) and regular pages
+- Direct page opening with Enter key
 
 ### Todo Management
 - Quick Todo addition to any Logseq page
@@ -92,6 +99,7 @@ Before using the extension, you need to set up two essential configurations:
 
 1. Open Raycast and type "Add Note"
 2. Enter your note content
+   - Automatically adds 【YYYY-MM-DD HH:mm】 formatted timestamp
 3. Specify the page name (optional)
 4. Press Enter to save
 

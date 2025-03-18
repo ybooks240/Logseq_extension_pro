@@ -22,5 +22,5 @@ export interface Note {
 export interface Preferences {
   logseqPath: string;
   defaultPage: string;
-  defaultViewMode?: ViewMode;
+  dateFormat?: string;
 }

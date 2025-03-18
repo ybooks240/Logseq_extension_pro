@@ -1,6 +1,8 @@
 # Logseq_extension_pro Changelog
 
 ## [1.2.0] - {PR_MERGE_DATE}
+- Added advanced page search functionality with journal and page type filtering
+- Added quick page opening feature
 - Added tag management functionality
 - Added due date setting feature
 - Enhanced search functionality with tag and due date filtering

@@ -1,12 +1,19 @@
 # Logseq Extension Pro
 
-这是一个强大的 Raycast 扩展，它能让你的 Logseq 工作流程如丝般顺滑，帮你轻松管理待办事项和笔记。（再也不用担心任务管理是个麻烦事啦！）
+[English Document](README.md)
+
+这是一个强大的 Raycast 扩展，它能让你的 Logseq 工作流程更加流畅，帮助你高效管理待办事项和笔记。
 
 访问我们的 [GitHub 仓库](https://github.com/ybooks240/Logseq_extension_pro) 获取源码和更新。
 
 ![添加待办界面](metadata/add-todo.j p g)
 
 ## 功能特色
+
+### 页面搜索
+- 快速访问 Logseq 页面
+- 支持按日志页面（日期格式）和普通页面分类过滤
+- 回车直接打开对应页面
 
 ### 待办事项管理
 - 一键添加待办到任意 Logseq 页面（快得连闪电都追不上）
@@ -92,6 +99,7 @@
 
 1. 打开 Raycast 输入 "Add Note"
 2. 输入笔记内容（想到什么写什么）
+   - 自动添加【年-月-日 时:分】格式的时间戳
 3. 指定页面名称（选填）
 4. 按回车保存（完美！）
 

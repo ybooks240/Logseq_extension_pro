@@ -32,7 +32,14 @@ export default function Command() {
             .map((tag) => `#${tag}`)
             .join(" ")
         : "";
-      const createdAt = new Date().toISOString().split("T")[0];
+      // const createdAt = new Date().toISOString().split("T")[0];
+      const createdAt = new Date().toLocaleString("zh-CN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
       const noteItem = `- ${values.content} ${tags} 📅 ${createdAt}\n`;
       const newContent = content.endsWith("\n\n")
         ? content + noteItem
